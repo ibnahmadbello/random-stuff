@@ -3,9 +3,11 @@
 
 import random
 
+
 scrambled_word = input("Enter the scrambled word here:\n")
 scrambled_length = len(scrambled_word)
 original_word = ""
+
 
 def main():
     print(getWordFactorial(scrambled_length))
@@ -15,29 +17,6 @@ def main():
             print(word)
 
 
-# # for letters in scrambled_word:
-# def trial(word, new):
-#     for letters in word:
-#         position = random.randrange(len(word))
-#         new += word[position]
-#         word = word[:position] + word[(position + 1):]
-#         if len(new) == scrambled_length:
-#             print(new, end="\t")
-#
-#
-# for i in range():
-#     trial(scrambled_word, original_word)
-# input("\nPress Enter key to exit.")
-#
-#
-# def numberOfPossiblePermutation(scrambled_length):
-#     result = 1
-#     while scrambled_length > 1:
-#         result *= scrambled_length
-#         --scrambled_length
-#     return result
-
-
 def getWordFactorial(scrambled_length):
     result = 1
     while scrambled_length > 1:
@@ -45,10 +24,12 @@ def getWordFactorial(scrambled_length):
         scrambled_length = scrambled_length - 1
     return result
 
+
 def getRandomWord():
     newWord = list(scrambled_word)
     random.shuffle(newWord)
     return ''.join(newWord)
+
 
 def loadDictionary():
     dictionaryFile = open('dictionary.txt')
@@ -58,7 +39,9 @@ def loadDictionary():
     dictionaryFile.close()
     return englishWords
 
+
 ENGLISH_WORDS = loadDictionary()
+
 
 if __name__ == '__main__':
     main()
