@@ -8,8 +8,12 @@ scrambled_length = len(scrambled_word)
 original_word = ""
 
 def main():
-    word = getRandomWord()
-    print(word)
+    print(getWordFactorial(scrambled_length))
+    for i in range(getWordFactorial(scrambled_length)):
+        word = getRandomWord()
+        if word.upper() in ENGLISH_WORDS:
+            print(word)
+
 
 # # for letters in scrambled_word:
 # def trial(word, new):
@@ -32,6 +36,14 @@ def main():
 #         result *= scrambled_length
 #         --scrambled_length
 #     return result
+
+
+def getWordFactorial(scrambled_length):
+    result = 1
+    while scrambled_length > 1:
+        result = result * scrambled_length
+        scrambled_length = scrambled_length - 1
+    return result
 
 def getRandomWord():
     newWord = list(scrambled_word)
